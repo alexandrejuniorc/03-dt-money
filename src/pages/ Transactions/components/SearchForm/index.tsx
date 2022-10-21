@@ -16,9 +16,7 @@ export const SearchForm = () => {
   const {
     register,
     handleSubmit,
-    formState: {
-      isSubmitting /* propriedade que retorna quando o formulário está sendo enviado */,
-    },
+    formState: { isSubmitting },
   } = useForm<SearchFormInputs>({
     resolver: zodResolver(searchFormSchema),
   })
@@ -26,7 +24,7 @@ export const SearchForm = () => {
   const handleSearchTransactions = async (data: SearchFormInputs) => {
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
-    await console.log(data)
+    console.log(data)
   }
 
   return (
